@@ -29,21 +29,21 @@ $(function () {
 	
 	function editQty(count, elem){
 		var getQty = elem.siblings(".p-amount__qty-el");
-		count = getQty.val();
-		count++
-		getQty.val(count)
-
+		var editQty = getQty.val() - count;
+		getQty.val(editQty)
+		if ( editQty < 1) {
+			getQty.val(1)
+			elem.attr('disabled', "disabled");
+		}else if ( editQty > 0) {
+			elem.siblings(".p-amount--minus-btn").removeAttr("disabled")
+		}
 	}
-
-	$('.p-amount--minus-btn').click(function(){
-		var getCount = count--
-		editQty(getCount, $(this))
 	
-		
+	$('.p-amount--minus-btn').click(function(){
+		editQty(1, $(this))		
 	})
 	$('.p-amount--plus-btn').click(function(){
-		var getCount = count++
-		editQty(getCount, $(this))
+		editQty(-1, $(this))	
 	})
 	//end product page script 
 })
