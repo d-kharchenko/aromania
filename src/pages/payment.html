@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<title>Aromania</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../css/app.css">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> 
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/vendor.js"></script>
+	<script type="text/javascript" src="../js/app.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<div class="uk-box-shadow-small">
+			<div class="header-wrap uk-container">
+				<div class="header">
+					<div class="header-info uk-flex uk-flex-middle uk-flex-between">
+						<div class="subnav-block">
+							<ul class="uk-subnav uk-flex-middle uk-margin-remove header-subnav">
+								<li class="header-info__mob-icon"><a href="#header-menu" title="" uk-toggle><img src="../img/menu-icon.png" alt="меню"></a></li>
+							    <li><a href="/"><img class="header-logo" src="../img/aromania-logo.png" alt="Aromamania"></a></li>
+							    <li class="header-info__hide-item"><a href="#">Оплата</a></li>
+							    <li class="header-info__hide-item"><a href="delivery.html">Доставка</a></li>
+							    <li class="header-info__hide-item"><a href="contacts.html">Контакти</a></li>
+							    <li class="header-info__mob-icon">
+							    	<div class="uk-inline">
+									    <button class="subnav-block__btn" type="button"></button>
+									    <div uk-dropdown="pos: bottom-right">
+									    	<form>
+									    		<input class="uk-input " type="text" name="" placeholder="логін">
+									    		<input class="uk-input uk-margin " type="text" name="" placeholder="пароль">
+									    		<button class="uk-button uk-button-default" type="button">Вхід</button>
+									    	</form>
+									    </div>
+									</div>
+							    	<!-- <a href="" title=""><img src="../img/user-mob.png" alt="вхід"></a> -->
+							    </li>
+							    <li class="header-info__mob-icon"><a href="#basket-modal" title="" uk-toggle><img src="../img/basket-mob.png" alt="кошик"></a></li>
+							</ul>
+						</div>
+						<div class="header-contacts uk-flex uk-flex-middle" itemscope itemtype="http://schema.org/Organization">
+							<a href="tel:+38050-123-45-67" class="uk-text-danger header-contacts__link" itemprop="telephone">+38050-123-45-67</a>
+							<ul class="uk-list header-contacts__list">
+								<li>Час роботи:</li>
+								<li>Пн-Пт з 9-00 до 19-00</li>
+							</ul>
+						</div>
+						<div class="header-auth">
+							<div class="uk-inline">
+							    <button class="header-auth__btn uk-button uk-button-default" type="button">Вхід</button>
+							    <div uk-dropdown="mode: click; pos: bottom-justify">
+							    	<form>
+							    		<input class="uk-input uk-width-medium" type="text" name="" placeholder="логін">
+							    		<input class="uk-input uk-margin uk-width-medium" type="text" name="" placeholder="пароль">
+							    		<button class="uk-button uk-button-default" type="button">Вхід</button>
+							    	</form>
+							    </div>
+							</div>
+							<a class="header-auth__btn uk-button uk-button-default" href="#" title="">Зареєструватися</a>
+						</div>
+					</div>
+					<div class="header-navbar" id="header-menu">
+						<nav class="uk-navbar-container " uk-navbar>
+						    <div class="uk-navbar-left">
+						        <ul class="uk-navbar-nav header-navbar__list">
+						        	<li class="header-navbar__item"><a href="/">Головна</a></li>
+						            <li class="header-navbar__item"><a href="#">Аромати</a></li>
+						            <li class="header-navbar__item"><a href="#">Бренди</a></li>
+						            <li class="header-navbar__item"><a href="#">Новинки</a></li>
+						            <li class="header-navbar__item"><a href="#">Залишки</a></li>
+						            <li class="header-navbar__item"><a href="#">Sale</a></li>
+						            <li class="header-navbar__item header-navbar--mob-item"><a href="">Оплата</a></li>
+								    <li class="header-navbar__item header-navbar--mob-item"><a href="delivery.html">Доставка</a></li>
+								    <li class="header-navbar__item header-navbar--mob-item"><a href="contacts.html">Контакти</a></li>
+						        </ul>
+						        <div class="search-block">
+								    <form class="uk-search uk-search-default">
+								        <a href="" class="uk-search-icon-flip" uk-search-icon></a>
+								        <input class="search-block__item uk-search-input" type="search" placeholder="Пошук...">
+								    </form>
+								</div>
+						    </div>
+						    <div class="basket uk-navbar-right uk-position-relative" >
+						    	<a href="#basket-modal" title="" uk-toggle>
+						    		<img src="../img/basket.png" alt="кошик">
+						    		<span class="basket__qty">2</span>
+						    	</a>
+						    	<div id="basket-modal" uk-modal>
+						    		<div class="uk-modal-dialog" uk-overflow-auto>
+						    			<button class="uk-modal-close-default" type="button" uk-close></button>
+						    			<div class="uk-modal-header">
+								            <h2 class="uk-modal-title">Ваше замовлення</h2>
+								        </div>
+								        <form>
+									        <div class="uk-modal-body modal-order uk-padding-remove-horizontal" uk-overflow-auto>
+									           <ul class="uk-list uk-list-divider">
+									           	<li class="uk-padding-small">
+									           		<a class="uk-align-left uk-margin-remove-bottom" href="#" title=""><img class="modal-order__img" src="../img/perfum.png"></a>
+									           		<div class="modal-order-desc uk-align-left">
+									           			<h4>Назва продукту</h4>
+									           			<p>100 гр.</p>
+									           		</div>
+									           		<div class="modal-product-price uk-align-right">
+									           			<span>200 грн.</span>
+									           		</div>
+									           	</li>
+									           	<li class="uk-padding-small">
+									           		<a class="uk-align-left uk-margin-remove-bottom" href="#" title=""><img class="modal-order__img" src="../img/perfum.png"></a>
+									           		<div class="modal-order-desc uk-align-left">
+									           			<h4>Назва продукту</h4>
+									           			<p>100 гр.</p>
+									           		</div>
+									           		<div class="modal-product-price uk-align-right">
+									           			<span>200 грн.</span>
+									           		</div>
+									           	</li>
+									           	<li class="uk-padding-small">
+									           		<span class="uk-align-left">Всього:</span>
+									           		<span class="uk-align-right">200 грн.</span>
+									           	</li>
+									           </ul>
+									        </div>
+											<div class="uk-modal-footer uk-text-right">
+									            <button class="uk-button uk-button-default uk-modal-close" type="button">Продовжити покупки</button>
+									            <button class="uk-button uk-button-primary" type="button">Оформити замовлення</button>
+									        </div>
+								    	</form>
+						    		</div>
+						    	</div>
+						    </div>
+						    <div class="header-navbar-contacts">
+						    	<a href="#" class="uk-text-danger header-contacts__link">+38050-123-45-67</a>
+						    	<a href="#" class="uk-text-danger header-contacts__link">+38050-123-45-67</a>
+						    </div>
+						    <div class="social-links">
+								<ul class="uk-subnav uk-flex-center">
+									<li><a href="#" title=""><img class="social-links__img" src="../img/instagram-logo.png" alt=""></a></li>
+									<li><a href="#" title=""><img class="social-links__img" src="../img/facebook-logo.png" alt=""></a></li>
+									<li><a href="#" title=""><img class="social-links__img" src="../img/viber-logo.png" alt=""></a></li>
+									<li><a href="#" title=""><img class="social-links__img" src="../img/telegram-logo.png" alt=""></a></li>
+								</ul>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="uk-section">
+			<div class="uk-container">
+				<h3 class="uk-text-center">Оплата</h3>
+				<hr>
+				<div> 
+						<p> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+			</div>
+			<hr>
+		</div>
+		<footer class="uk-position-relative">
+			<div class="uk-container">
+				<div class="footer-navbar">
+					<ul class="uk-navbar-nav header-navbar__list">
+						<li class="footer-navbar__item"><a href="#">Аромати</a></li>
+						<li class="footer-navbar__item"><a href="#">Бренди</a></li>
+						<li class="footer-navbar__item"><a href="#">Новинки</a></li>
+						<li class="footer-navbar__item"><a href="#">Залишки</a></li>
+						<li class="footer-navbar__item"><a href="#">Sale</a></li>
+						<li class="footer-navbar__item"><a href="#">Оплата</a></li>
+						<li class="footer-navbar__item"><a href="#">Доставка</a></li>
+						<li class="footer-navbar__item"><a href="#">Контакти</a></li>
+					</ul>
+					<div class="social-links">
+				<ul class="uk-subnav uk-flex-center">
+					<li><a href="#" title=""><img class="social-links__img" src="../img/instagram-logo.png" alt=""></a></li>
+					<li><a href="#" title=""><img class="social-links__img" src="../img/facebook-logo.png" alt=""></a></li>
+					<li><a href="#" title=""><img class="social-links__img" src="../img/viber-logo.png" alt=""></a></li>
+					<li><a href="#" title=""><img class="social-links__img" src="../img/telegram-logo.png" alt=""></a></li>
+				</ul>
+			</div>
+				</div>
+			</div>
+			
+			<div class="uk-position-bottom-center uk-overlay uk-overlay-default uk-padding-small">
+				<p class="uk-text-small">&copy; 2018, Всі права захищено </p>
+			</div>
+		</footer>
+	</div>
+	<div class="to-top">
+		<a href="#"><img class="to-top__item" src="../img/up-arrow.png" alt="на верх"></a>
+	</div>
+</body>
+</html>

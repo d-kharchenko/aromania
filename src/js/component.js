@@ -24,5 +24,26 @@ $(function () {
 	adaptiveMenu()
 	$(window).resize(function(){
 		adaptiveMenu()
-	})  
+	}) 
+	// product page script
+	
+	function editQty(count, elem){
+		var getQty = elem.siblings(".p-amount__qty-el");
+		count = getQty.val();
+		count++
+		getQty.val(count)
+
+	}
+
+	$('.p-amount--minus-btn').click(function(){
+		var getCount = count--
+		editQty(getCount, $(this))
+	
+		
+	})
+	$('.p-amount--plus-btn').click(function(){
+		var getCount = count++
+		editQty(getCount, $(this))
+	})
+	//end product page script 
 })

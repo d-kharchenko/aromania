@@ -23,24 +23,48 @@
 							<ul class="uk-subnav uk-flex-middle uk-margin-remove header-subnav">
 								<li class="header-info__mob-icon"><a href="#header-menu" title="" uk-toggle><img src="img/menu-icon.png" alt="меню"></a></li>
 							    <li><a href="#"><img class="header-logo" src="img/aromania-logo.png" alt="Aromamania"></a></li>
-							    <li class="header-info__hide-item"><a href="#">Оплата</a></li>
-							    <li class="header-info__hide-item"><a href="#">Доставка</a></li>
-							    <li class="header-info__hide-item"><a href="#">Контакти</a></li>
-							    <li class="header-info__mob-icon"><a href="#" title=""><img src="img/user-mob.png" alt="вхід"></a></li>
-							    <li class="header-info__mob-icon"><a href="#" title="" ><img src="img/basket-mob.png" alt="кошик"></a></li>
+							    <li class="header-info__hide-item"><a href="pages/payment.html">Оплата</a></li>
+							    <li class="header-info__hide-item"><a href="pages/delivery.html">Доставка</a></li>
+							    <li class="header-info__hide-item"><a href="pages/contacts.html">Контакти</a></li>
+							    <li class="header-info__mob-icon">
+							    	<div class="uk-inline">
+									    <button class="subnav-block__btn" type="button"></button>
+									    <div uk-dropdown="pos: bottom-right">
+									    	<form>
+									    		<input class="uk-input " type="text" name="" placeholder="логін">
+									    		<input class="uk-input uk-margin " type="text" name="" placeholder="пароль">
+									    		<button class="uk-button uk-button-default header-auth__btn" type="button">Вхід</button>
+									    	</form>
+
+									    	<a href="pages/regpage.html" class="subnav-block__link uk-button uk-button-default uk-margin header-auth__btn" title="">Pеєстрація</a>
+									    	<a href="#" class="uk-link-muted" title="">Забули пароль</a>
+									    </div>
+									</div>
+							    	<!-- <a href="" title=""><img src="img/user-mob.png" alt="вхід"></a> -->
+							    </li>
+							    <li class="header-info__mob-icon"><a href="#basket-modal" title="" uk-toggle><img src="img/basket-mob.png" alt="кошик"></a></li>
 							</ul>
 						</div>
-						<div class="header-contacts uk-flex uk-flex-middle">
-							<a href="#" class="uk-text-danger header-contacts__link">+38050-123-45-67</a>
+						<div class="header-contacts uk-flex uk-flex-middle" itemscope itemtype="http://schema.org/Organization">
+							<a href="tel:+38050-123-45-67" class="uk-text-danger header-contacts__link" itemprop="telephone">+38050-123-45-67</a>
 							<ul class="uk-list header-contacts__list">
 								<li>Час роботи:</li>
 								<li>Пн-Пт з 9-00 до 19-00</li>
 							</ul>
 						</div>
 						<div class="header-auth">
-							<a href="#" title="">Вхід</a>
-							/
-							<a href="#" title="">Зареєструватися</a>
+							<div class="uk-inline">
+							    <button class="header-auth__btn uk-button uk-button-default" type="button">Вхід</button>
+							    <div uk-dropdown="mode: click; pos: bottom-justify">
+							    	<form class="uk-margin-bottom">
+							    		<input class="uk-input uk-width-medium" type="text" name="" placeholder="логін">
+							    		<input class="uk-input uk-margin uk-width-medium" type="text" name="" placeholder="пароль">
+							    		<button class="uk-button uk-button-default uk-width-1-1 header-auth__btn" type="button">Вхід</button>
+							    	</form>
+							    	<a href="#" class="uk-link-muted" title="">Забули пароль</a>
+							    </div>
+							</div>
+							<a class="header-auth__btn uk-button uk-button-default" href="pages/regpage.html" title="">Зареєструватися</a>
 						</div>
 					</div>
 					<div class="header-navbar" id="header-menu">
@@ -52,6 +76,9 @@
 						            <li class="header-navbar__item"><a href="#">Новинки</a></li>
 						            <li class="header-navbar__item"><a href="#">Залишки</a></li>
 						            <li class="header-navbar__item"><a href="#">Sale</a></li>
+						            <li class="header-navbar__item header-navbar--mob-item"><a href="pages/payment.html">Оплата</a></li>
+									<li class="header-navbar__item header-navbar--mob-item"><a href="pages/delivery.html">Доставка</a></li>
+									<li class="header-navbar__item header-navbar--mob-item"><a href="pages/contacts.html">Контакти</a></li>
 						        </ul>
 						        <div class="search-block">
 								    <form class="uk-search uk-search-default">
@@ -61,8 +88,52 @@
 								</div>
 						    </div>
 						    <div class="basket uk-navbar-right uk-position-relative" >
-						    	<img src="img/basket.png" alt="кошик">
-						    	<span class="basket__qty">2</span>
+						    	<a href="#basket-modal" title="" uk-toggle>
+						    		<img src="img/basket.png" alt="кошик">
+						    		<span class="basket__qty">2</span>
+						    	</a>
+						    	<div id="basket-modal" uk-modal>
+						    		<div class="uk-modal-dialog" uk-overflow-auto>
+						    			<button class="uk-modal-close-default" type="button" uk-close></button>
+						    			<div class="uk-modal-header">
+								            <h2 class="uk-modal-title basket-modal__title">Ваше замовлення</h2>
+								        </div>
+								        <form>
+									        <div class="uk-modal-body modal-order uk-padding-remove-horizontal" uk-overflow-auto>
+									           <ul class="uk-list uk-list-divider">
+									           	<li class="uk-padding-small">
+									           		<a class="uk-align-left uk-margin-remove-bottom" href="#" title=""><img class="modal-order__img" src="img/perfum.png"></a>
+									           		<div class="modal-order-desc uk-align-left">
+									           			<h4>Назва продукту</h4>
+									           			<p>100 гр.</p>
+									           		</div>
+									           		<div class="modal-product-price uk-align-right">
+									           			<span>200 грн.</span>
+									           		</div>
+									           	</li>
+									           	<li class="uk-padding-small">
+									           		<a class="uk-align-left uk-margin-remove-bottom" href="#" title=""><img class="modal-order__img" src="img/perfum.png"></a>
+									           		<div class="modal-order-desc uk-align-left">
+									           			<h4>Назва продукту</h4>
+									           			<p>100 гр.</p>
+									           		</div>
+									           		<div class="modal-product-price uk-align-right">
+									           			<span>200 грн.</span>
+									           		</div>
+									           	</li>
+									           	<li class="uk-padding-small">
+									           		<span class="uk-align-left">Всього:</span>
+									           		<span class="uk-align-right">200 грн.</span>
+									           	</li>
+									           </ul>
+									        </div>
+											<div class="uk-modal-footer uk-text-center">
+									            <button class="basket-modal__btn uk-button uk-button-default uk-modal-close" type="button">Продовжити покупки</button>
+									            <button class="basket-modal__btn uk-button uk-button-primary" type="button">Оформити замовлення</button>
+									        </div>
+								    	</form>
+						    		</div>
+						    	</div>
 						    </div>
 						    <div class="header-navbar-contacts">
 						    	<a href="#" class="uk-text-danger header-contacts__link">+38050-123-45-67</a>
@@ -83,34 +154,34 @@
 		</div>
 		<div class="uk-section">
 			<div class="uk-container">
-				<div class="uk-child-width-expand@s uk-position-relative" uk-grid>
-				    <div class="sample-block uk-margin-left uk-card uk-card-default uk-background-muted uk-card-body">
+				<div class="sample-wrap uk-position-relative">
+				    <div class="sample-block  uk-card uk-card-default uk-background-muted uk-card-body">
 				    	<a href="#" class="sample-block__link">
 				    		<span class="sample-block__text">cемпли</span><br>
 				    		<span class="sample-block__text sample-block--bold">Жіночих</span><br>
 				    		<span class="sample-block__text sample-block--align">ароматів</span>
 				    		<span class="sample-block__item"></span>
-				    		<span class="sample-block__arrow">&lt;</span>
+				    		<span class="sample-block__arrow">&lsaquo;</span>
 				    		<img class="sample-block__img" src="img/sample-pf-1.png">
 				    	</a>
 				    </div>
-				    <div class="sample-block uk-card uk-card-default uk-background-muted uk-card-body uk-margin-left">
+				    <div class="sample-block sample-block--margin uk-card uk-card-default uk-background-muted uk-card-body ">
 				    	<a href="#" class="sample-block__link">
 				    		<span class="sample-block__text">семпли</span><br>
 				    		<span class="sample-block__text sample-block--bold">Унісекс</span><br>
 				    		<span class="sample-block__text sample-block--align">ароматів</span>
 				    		<span class="sample-block__item"></span>
-				    		<span class="sample-block__arrow">&lt;</span>
+				    		<span class="sample-block__arrow">&lsaquo;</span>
 				    		<img class="sample-block__img" src="img/sample-pf-2.png">
 				    	</a>
 				    </div>
-				    <div class="sample-block uk-card uk-card-default uk-background-muted uk-card-body uk-margin-left">
+				    <div class="sample-block sample-block--margin uk-card uk-card-default uk-background-muted uk-card-body ">
 				    	<a href="#" class="sample-block__link">
 				    		<span class="sample-block__text">семпли</span><br>
 				    		<span class="sample-block__text sample-block--bold">Чоловічих</span><br>
 				    		<span class="sample-block__text sample-block--align">ароматів</span>
 				    		<span class="sample-block__item"></span>
-				    		<span class="sample-block__arrow">&lt;</span>
+				    		<span class="sample-block__arrow">&lsaquo;</span>
 				    		<img class="sample-block__img" src="img/sample-pf-3.png">
 				    	</a>
 				    </div>
@@ -131,10 +202,10 @@
 					<div class="product-cart">
 				        <div class="uk-card uk-card-hover uk-text-center">
 				        	 <div class="uk-card-media-top ">
-				                <img src="img/perfum.png" class="uk-height-medium" alt="">
+				                <a href="pages/productpage.html" title=""><img src="img/perfum.png" class="product-cart__img" alt=""></a>
 				            </div>
 				        	<div class="uk-card-body">
-				        		<h4 class="product-cart__name">Назва продукту</h4>
+				        		<h4 class="product-cart__name"><a href="pages/productpage.html" class="uk-link-reset" title="">Назва продукту</a></h4>
 				        		<div class="rating">
 				        			<span class="rating__stars rating--cheked" uk-icon="star"></span>
 					        		<span class="rating__stars rating--cheked" uk-icon="star"></span>
@@ -149,10 +220,28 @@
 				    <div class="product-cart">
 				        <div class="uk-card uk-card-hover uk-text-center">
 				        	 <div class="uk-card-media-top ">
-				                <img src="img/perfum.png" class="uk-height-medium" alt="">
+				                <a href="pages/productpage.html" title=""><img src="img/perfum.png" class="product-cart__img" alt=""></a>
 				            </div>
 				        	<div class="uk-card-body">
-				        		<h4 class="product-cart__name">Назва продукту</h4>
+				        		<h4 class="product-cart__name"><a href="pages/productpage.html" class="uk-link-reset" title="">Назва продукту</a></h4>
+				        		<div class="rating">
+				        			<span class="rating__stars rating--cheked" uk-icon="star"></span>
+					        		<span class="rating__stars rating--cheked" uk-icon="star"></span>
+					        		<span class="rating__stars rating--cheked" uk-icon="star"></span>
+					        		<span class="rating__stars rating--cheked" uk-icon="star"></span>
+					        		<span class="rating__stars" uk-icon="star"></span>
+				        		</div>	
+				        		<p class="product-price"><span>1 мл.</span> 100 грн</p>
+				        	</div>
+				        </div>
+				    </div>
+				   <div class="product-cart">
+				        <div class="uk-card uk-card-hover uk-text-center">
+				        	 <div class="uk-card-media-top ">
+				                <a href="pages/productpage.html" title=""><img src="img/perfum.png" class="product-cart__img" alt=""></a>
+				            </div>
+				        	<div class="uk-card-body">
+				        		<h4 class="product-cart__name"><a href="pages/productpage.html" class="uk-link-reset" title="">Назва продукту</a></h4>
 				        		<div class="rating">
 				        			<span class="rating__stars rating--cheked" uk-icon="star"></span>
 					        		<span class="rating__stars rating--cheked" uk-icon="star"></span>
@@ -167,10 +256,10 @@
 				    <div class="product-cart">
 				        <div class="uk-card uk-card-hover uk-text-center">
 				        	 <div class="uk-card-media-top ">
-				                <img src="img/perfum.png" class="uk-height-medium" alt="">
+				                <a href="pages/productpage.html" title=""><img src="img/perfum.png" class="product-cart__img" alt=""></a>
 				            </div>
 				        	<div class="uk-card-body">
-				        		<h4 class="product-cart__name">Назва продукту</h4>
+				        		<h4 class="product-cart__name"><a href="pages/productpage.html" class="uk-link-reset" title="">Назва продукту</a></h4>
 				        		<div class="rating">
 				        			<span class="rating__stars rating--cheked" uk-icon="star"></span>
 					        		<span class="rating__stars rating--cheked" uk-icon="star"></span>
@@ -185,10 +274,10 @@
 				    <div class="product-cart">
 				        <div class="uk-card uk-card-hover uk-text-center">
 				        	 <div class="uk-card-media-top ">
-				                <img src="img/perfum.png" class="uk-height-medium" alt="">
+				                <a href="pages/productpage.html" title=""><img src="img/perfum.png" class="product-cart__img" alt=""></a>
 				            </div>
 				        	<div class="uk-card-body">
-				        		<h4 class="product-cart__name">Назва продукту</h4>
+				        		<h4 class="product-cart__name"><a href="pages/productpage.html" class="uk-link-reset" title="">Назва продукту</a></h4>
 				        		<div class="rating">
 				        			<span class="rating__stars rating--cheked" uk-icon="star"></span>
 					        		<span class="rating__stars rating--cheked" uk-icon="star"></span>
@@ -200,13 +289,13 @@
 				        	</div>
 				        </div>
 				    </div>
-				    <div class="product-cart">
+				   <div class="product-cart">
 				        <div class="uk-card uk-card-hover uk-text-center">
 				        	 <div class="uk-card-media-top ">
-				                <img src="img/perfum.png" class="uk-height-medium" alt="">
+				                <a href="pages/productpage.html" title=""><img src="img/perfum.png" class="product-cart__img" alt=""></a>
 				            </div>
 				        	<div class="uk-card-body">
-				        		<h4 class="product-cart__name">Назва продукту</h4>
+				        		<h4 class="product-cart__name"><a href="pages/productpage.html" class="uk-link-reset" title="">Назва продукту</a></h4>
 				        		<div class="rating">
 				        			<span class="rating__stars rating--cheked" uk-icon="star"></span>
 					        		<span class="rating__stars rating--cheked" uk-icon="star"></span>
@@ -218,13 +307,13 @@
 				        	</div>
 				        </div>
 				    </div>
-				    <div class="product-cart">
+				   <div class="product-cart">
 				        <div class="uk-card uk-card-hover uk-text-center">
 				        	 <div class="uk-card-media-top ">
-				                <img src="img/perfum.png" class="uk-height-medium" alt="">
+				                <a href="pages/productpage.html" title=""><img src="img/perfum.png" class="product-cart__img" alt=""></a>
 				            </div>
 				        	<div class="uk-card-body">
-				        		<h4 class="product-cart__name">Назва продукту</h4>
+				        		<h4 class="product-cart__name"><a href="pages/productpage.html" class="uk-link-reset" title="">Назва продукту</a></h4>
 				        		<div class="rating">
 				        			<span class="rating__stars rating--cheked" uk-icon="star"></span>
 					        		<span class="rating__stars rating--cheked" uk-icon="star"></span>
@@ -236,37 +325,19 @@
 				        	</div>
 				        </div>
 				    </div>
-				    <div class="product-cart">
+				   <div class="product-cart">
 				        <div class="uk-card uk-card-hover uk-text-center">
 				        	 <div class="uk-card-media-top ">
-				                <img src="img/perfum.png" class="uk-height-medium" alt="">
+				                <a href="pages/productpage.html" title=""><img src="img/perfum.png" class="product-cart__img" alt=""></a>
 				            </div>
 				        	<div class="uk-card-body">
-				        		<h4 class="product-cart__name">Назва продукту</h4>
-				        		<div class="rating">
-				        			<span class="rating__stars rating--cheked" uk-icon="star"></span>
-					        		<span class="rating__stars rating--cheked" uk-icon="star"></span>
-					        		<span class="rating__stars rating--cheked" uk-icon="star"></span>
-					        		<span class="rating__stars" uk-icon="star"></span>
-					        		<span class="rating__stars" uk-icon="star"></span>
-				        		</div>	
-				        		<p class="product-price"><span>1 мл.</span> 100 грн</p>
-				        	</div>
-				        </div>
-				    </div>
-				    <div class="product-cart">
-				        <div class="uk-card uk-card-hover uk-text-center">
-				        	 <div class="uk-card-media-top ">
-				                <img src="img/perfum.png" class="uk-height-medium" alt="">
-				            </div>
-				        	<div class="uk-card-body">
-				        		<h4 class="product-cart__name">Назва продукту</h4>
+				        		<h4 class="product-cart__name"><a href="pages/productpage.html" class="uk-link-reset" title="">Назва продукту</a></h4>
 				        		<div class="rating">
 				        			<span class="rating__stars rating--cheked" uk-icon="star"></span>
 					        		<span class="rating__stars rating--cheked" uk-icon="star"></span>
 					        		<span class="rating__stars rating--cheked" uk-icon="star"></span>
 					        		<span class="rating__stars rating--cheked" uk-icon="star"></span>
-					        		<span class="rating__stars rating--cheked" uk-icon="star"></span>
+					        		<span class="rating__stars" uk-icon="star"></span>
 				        		</div>	
 				        		<p class="product-price"><span>1 мл.</span> 100 грн</p>
 				        	</div>
@@ -306,24 +377,24 @@
 					<div class="security-block">
 						<h3><span uk-icon="icon: warning; ratio: 2"></span> Безпека</h3>
 						<ul class="uk-list">
-							<li>Захист персональних даних</li>
-							<li>Безпечні платежі</li>
-							<li>Оригінальна продукція</li>
+							<li><span uk-icon="check"></span> Захист персональних даних</li>
+							<li><span uk-icon="check"></span> Безпечні платежі</li>
+							<li><span uk-icon="check"></span> Оригінальна продукція</li>
 						</ul>
 					</div>
 					<div class="delivery-block">
 						<h3><span uk-icon="icon: location; ratio: 2"></span> Доставка</h3>
 						<ul class="uk-list">
-							<li>Нова пошта</li>
-							<li>Кур'єрська доставка</li>
-							<li>Ще щось дописатти</li>
+							<li><span uk-icon="check"></span>Нова пошта</li>
+							<li><span uk-icon="check"></span> Кур'єрська доставка</li>
+							<li><span uk-icon="check"></span> Ще щось дописатти</li>
 						</ul>
 					</div>
 					<div class="payment-block">
 						<h3><span uk-icon="icon: credit-card; ratio: 2"></span> Оплата</h3>
 						<ul class="uk-list">
-							<li>Visa та MasterCard</li>
-							<li>Готівка</li>
+							<li><span uk-icon="check"></span> Visa та MasterCard</li>
+							<li><span uk-icon="check"></span> Готівка</li>
 						</ul>
 					</div>
 				</div>
