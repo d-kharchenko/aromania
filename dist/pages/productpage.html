@@ -178,7 +178,7 @@
 						<div class="p-buy-now uk-padding-small">
 							<form class="uk-text-center">
 								<legend class="uk-legend">Купити в 1 клік</legend>
-								<input class="uk-input  p-buy-now__inp" type="tel" name="" placeholder="050-123-45-67" required>
+								<input class="uk-input  p-buy-now__inp" type="tel" name="" placeholder="050-123-45-67" minlength="10" maxlength="10" required>
 								<input class="uk-button uk-button-default p-buy-now__inp" type="submit" name="" value="Купити">
 							</form>
 						</div>
@@ -222,8 +222,71 @@
 					</div>
 				</div>
 			</div>
-			<hr>
 		</div>
+		<hr>
+		<div class="uk-container">
+			<h4 class="uk-text-center">Залишити відгук</h4>
+			<div class="p-with-review">
+				<p>тут будуть відгуки</p>
+			</div>
+			<hr>
+			<div class="p-add-review">
+				<form>
+					<div class="p-overall uk-width-medium">
+						<label class="uk-form-label">Загальне враження: </label>
+						<fieldset class="p-overall__rating">
+                            <input type="checkbox" id="p-overall__star5" value="5" /><label for= "p-overall__star5" title="Відмінно"></label>
+                            <input type="checkbox" id="p-overall__star4" value="4" /><label for= "p-overall__star4" title="Добре"></label>
+                            <input type="checkbox" id="p-overall__star3" value="3" /><label for= "p-overall__star3" title="Задовільно"></label>
+                            <input type="checkbox" id="p-overall__star2" value="2" /><label for= "p-overall__star2" title="Незадовільно"></label>
+                            <input type="checkbox" id="p-overall__star1" value="1" /><label for= "p-overall__star1" title="Все погано"></label>
+                        </fieldset>
+					</div>
+					<div class="p-durability uk-width-medium">
+						<label class="uk-form-label">Стійкість: </label>
+						<fieldset class="p-durability__rating">
+                            <input type="checkbox"  value="5"  id="p-durability__star5"/><label for = "p-durability__star5" title="Відмінно"></label>
+                            <input type="checkbox"  value="4"  id="p-durability__star4"/><label for = "p-durability__star4" title="Добре"></label>
+                            <input type="checkbox"  value="3"  id="p-durability__star3"/><label for = "p-durability__star3" title="Задовільно"></label>
+                            <input type="checkbox"  value="2"  id="p-durability__star2"/><label for = "p-durability__star2" title="Незадовільно"></label>
+                            <input type="checkbox"  value="1"  id="p-durability__star1"/><label for = "p-durability__star1" title="Все погано"></label>
+                        </fieldset>
+					</div>
+					<div class="p-plume uk-width-medium">
+						<label class="uk-form-label">Шлейф: </label>
+						<fieldset class="p-plume__rating">
+                            <input id = "p-plume__item5" type="checkbox"  value="5" /><label for= "p-plume__item5" title="Відмінно"></label>
+                            <input id = "p-plume__item4" type="checkbox"  value="4" /><label for= "p-plume__item4" title="Добре"></label>
+                            <input id = "p-plume__item3" type="checkbox"  value="3" /><label for= "p-plume__item3" title="Задовільно"></label>
+                            <input id = "p-plume__item2" type="checkbox"  value="2" /><label for= "p-plume__item2" title="Незадовільно"></label>
+                            <input id = "p-plume__item1" type="checkbox"  value="1" /><label for= "p-plume__item1" title="Все погано"></label>
+                        </fieldset>
+					</div>
+					<div class="p-recom-radio uk-width-medium uk-text-center">
+						<label class="uk-form-label">Чи будете рекомендувати це аромат: </label>
+						<br>
+						<label><input class="uk-radio" type="radio" name="radio2" checked> Так</label>
+            			<input class="uk-radio" type="radio" name="radio2"> Ні</label>
+					</div>
+					<div class="uk-width-1-2@s uk-width-1-1">
+						<label class="uk-form-label">Ваш відгук: </label>
+						<textarea class="uk-textarea" rows="5" required></textarea>
+					</div>
+					<div class="uk-width-1-2@s uk-width-1-1">
+						<label class="uk-form-label">Ваш ім'я: </label>
+						<input class="uk-input" type="text"  required>
+					</div>
+					<div class="uk-width-1-2@s uk-width-1-1">
+						<label class="uk-form-label">E-mail: </label>
+						<input class="uk-input" type="email" required >
+					</div>
+					<div class="uk-margin-top uk-text-right">
+						<input class="uk-button uk-button-danger" type="submit" value="Надіслати" name="">
+					</div>
+				</form>
+			</div>
+		</div>
+		<hr>
 		<footer class="uk-position-relative">
 			<div class="uk-container">
 				<div class="footer-navbar">

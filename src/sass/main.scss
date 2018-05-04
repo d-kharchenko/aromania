@@ -304,6 +304,76 @@ body{
 .p-price__item{
 	font-size: 24px;
 }
+.p-recom-radio{
+	.uk-radio:checked{
+		background-color: $warning-color;
+	}
+}
+.p-durability__rating, 
+.p-overall__rating, 
+.p-plume__rating { 
+  	border: none;
+  	width: 185px;
+  	margin: 0 auto;
+}
+
+.p-durability__rating > input,
+.p-overall__rating > input,
+.p-plume__rating > input { 
+	display: none; 
+} 
+.p-durability__rating > label:before,
+.p-overall__rating > label:before,
+.p-plume__rating > label:before
+ { 
+  	margin: 5px;
+  	font-size: 30px;
+  	display: inline-block;
+  	content: "\2605";
+}
+
+.p-durability__rating > label,
+.p-overall__rating > label,
+.p-plume__rating > label{ 
+  	color: #ddd; 
+ 	float: right; 
+}
+.p-durability__rating > input:checked ~ label, 
+.p-durability__rating:not(:checked) > label:hover, 
+.p-durability__rating:not(:checked) > label:hover ~ label, 
+.p-overall__rating > input:checked ~ label, 
+.p-overall__rating:not(:checked) > label:hover, 
+.p-overall__rating:not(:checked) > label:hover ~ label,
+.p-plume__rating > input:checked ~ label, 
+.p-plume__rating:not(:checked) > label:hover, 
+.p-plume__rating:not(:checked) > label:hover ~ label{
+	color: $warning-color;  
+} 
+.p-durability__rating > input:checked ~ label, 
+.p-durability__rating:not(:checked) > label:hover, 
+.p-durability__rating:not(:checked) > label:hover ~ label, 
+.p-overall__rating > input:checked ~ label, 
+.p-overall__rating:not(:checked) > label:hover, 
+.p-overall__rating:not(:checked) > label:hover ~ label,
+.p-plume__rating > input:checked ~ label, 
+.p-plume__rating:not(:checked) > label:hover, 
+.p-plume__rating:not(:checked) > label:hover ~ label{
+	color: $warning-color;  
+} 
+.p-durability__rating > input:checked + label:hover,
+.p-durability__rating > input:checked ~ label:hover,
+.p-durability__rating > label:hover ~ input:checked ~ label,
+.p-durability__rating > input:checked ~ label:hover ~ label,
+.p-overall__rating > input:checked + label:hover,
+.p-overall__rating > input:checked ~ label:hover,
+.p-overall__rating > label:hover ~ input:checked ~ label,
+.p-overall__rating > input:checked ~ label:hover ~ label,
+.p-plume__rating > input:checked + label:hover,
+.p-plume__rating > input:checked ~ label:hover,
+.p-plume__rating > label:hover ~ input:checked ~ label,
+.p-plume__rating > input:checked ~ label:hover ~ label{ 
+	color: $warning-color;  
+}
 	/*end productpage style*/
 
 @media screen and (max-width: 767px){
